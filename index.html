@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ellis Row</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* Reset & fonts */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Roboto', sans-serif; color:#f5f5f5; background:#0a0a0a; line-height:1.6; }
-h1,h2,h3 { font-family:'Playfair Display', serif; color:#f5f5f5; }
+body { font-family:'Roboto', sans-serif; color:#f5f5f5; background:#0a0a0a; line-height:1.6; overflow-x:hidden; }
+h1,h2,h3 { font-family:'Cormorant Garamond', serif; color:#f5f5f5; }
 a { text-decoration:none; color:inherit; transition:0.3s; }
 
 /* Hero */
@@ -18,56 +18,67 @@ header {
   height:100vh;
   display:flex; justify-content:center; align-items:center; text-align:center;
   background: url('modern-office-space-with-futuristic-decor-furniture.jpg') center/cover no-repeat fixed;
+  overflow:hidden;
 }
 header::after {
   content:'';
   position:absolute; top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.35); /* subtle overlay for text readability */
+  background: rgba(0,0,0,0.35);
 }
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width:900px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display:flex; flex-direction:column; align-items:center;
+  animation: fadeInUp 1.5s ease forwards;
 }
 .hero-logo {
-  width: 350px; /* larger logo */
-  max-width: 80%; /* responsive */
-  height: auto;
-  margin-bottom: 30px;
+  width: 500px;
+  max-width:90%; 
+  height:auto;
+  margin-bottom:40px;
+  opacity:0;
+  transform:scale(0.8);
+  animation: logoPop 1s ease forwards 0.3s;
 }
-.hero-content h1 { display: none; }
+.hero-content h1 { display:none; }
 .hero-content p {
-  font-size: 1.6rem;
-  color: #b0b0b0;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s ease;
-  text-align: center;
+  font-family:'Playfair Display', serif;
+  font-size:1.8rem;
+  color:#d3d3d3;
+  opacity:0;
+  transform:translateY(30px);
+  animation: fadeInUp 1s ease forwards 0.8s;
+  text-align:center;
+  letter-spacing:1px;
 }
 
 /* Sections */
-section { padding:100px 20px; background:#111; text-align:center; position:relative; }
-section h2 { font-size:2.5rem; margin-bottom:20px; color:#bfa25a; }
-section p { max-width:700px; margin:0 auto; font-size:1.2rem; line-height:1.6; color:#a8a8a8; }
-.divider { width:80px; height:2px; margin:30px auto; background: linear-gradient(to right,#bfa25a,#7f6a3e,#bfa25a); }
+section { padding:100px 20px; background:#111; text-align:center; position:relative; overflow:hidden; }
+section h2 { font-family:'Cormorant Garamond', serif; font-size:2.8rem; margin-bottom:20px; color:#bfa25a; letter-spacing:1px; opacity:0; transform:translateY(20px); animation: fadeInUp 1s ease forwards; }
+section p { max-width:700px; margin:0 auto; font-size:1.3rem; line-height:1.8; color:#c0c0c0; font-family:'Playfair Display', serif; opacity:0; transform:translateY(20px); animation: fadeInUp 1s ease forwards 0.3s; }
+.divider { width:80px; height:2px; margin:30px auto; background: linear-gradient(to right,#bfa25a,#7f6a3e,#bfa25a); opacity:0; transform:scaleX(0); animation: scaleXIn 1s ease forwards; }
 
 /* Contact */
-section.contact a { display:inline-block; margin-top:1rem; padding:0.75rem 1.5rem; border:1px solid #bfa25a; border-radius:4px; color:#bfa25a; transition:0.3s; }
+section.contact a { display:inline-block; margin-top:1rem; padding:0.85rem 1.7rem; border:1px solid #bfa25a; border-radius:4px; color:#bfa25a; transition:0.3s; font-family:'Cormorant Garamond', serif; font-weight:600; transform:translateY(20px); opacity:0; animation: fadeInUp 1s ease forwards 0.5s;}
 section.contact a:hover { background:#bfa25a; color:#111; transform:scale(1.05); }
 
-footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; }
+footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; font-family:'Roboto', sans-serif; }
 
 /* Scroll animations */
 .scroll-fade { opacity:0; transform:translateY(30px); transition: all 1s ease; }
 .scroll-fade.show { opacity:1; transform:translateY(0); }
 
+/* Keyframes */
+@keyframes fadeInUp { 0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
+@keyframes logoPop { 0% {opacity:0; transform:scale(0.8);} 70% {opacity:1; transform:scale(1.05);} 100% {transform:scale(1);} }
+@keyframes scaleXIn { 0% {opacity:0; transform:scaleX(0);} 100% {opacity:1; transform:scaleX(1);} }
+
 /* Responsive */
-@media(max-width:768px){ header h1{font-size:3rem;} header p{font-size:1.2rem;} }
-@media(max-width:480px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} header img{max-width:60%;} }
+@media(max-width:1024px){ .hero-logo{width:400px;} .hero-content p{font-size:1.5rem;} }
+@media(max-width:768px){ .hero-logo{width:300px;} .hero-content p{font-size:1.3rem;} section h2{font-size:2.2rem;} section p{font-size:1.1rem;} }
+@media(max-width:480px){ .hero-logo{width:250px;} .hero-content p{font-size:1rem;} section h2{font-size:1.8rem;} section p{font-size:0.95rem;} }
 </style>
 </head>
 <body>
@@ -121,12 +132,6 @@ const header = document.querySelector('header');
 window.addEventListener('scroll', ()=>{
   const offset = window.pageYOffset;
   header.style.backgroundPositionY = offset * 0.3 + "px";
-});
-
-// Animate hero paragraph
-window.addEventListener('load', ()=>{
-  document.querySelector('.hero-content p').style.opacity = 1;
-  document.querySelector('.hero-content p').style.transform = "translateY(0)";
 });
 </script>
 
