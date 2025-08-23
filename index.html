@@ -24,10 +24,30 @@ header::after {
   position:absolute; top:0; left:0; width:100%; height:100%;
   background: rgba(0,0,0,0.35); /* subtle overlay for text readability */
 }
-.hero-content { position:relative; z-index:2; max-width:900px; padding:20px; display:flex; flex-direction:column; align-items:center; }
-.hero-content img { width:150px; max-width:30%; height:auto; margin-bottom:20px; }
-.hero-content h1 { font-size:4rem; font-weight:700; letter-spacing:2px; margin-bottom:1rem; opacity:0; transform:translateY(-30px); transition:1s ease; }
-.hero-content p { font-size:1.4rem; color:#b0b0b0; opacity:0; transform:translateY(30px); transition:1s ease; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-logo {
+  width: 350px; /* larger logo */
+  max-width: 80%; /* responsive */
+  height: auto;
+  margin-bottom: 30px;
+}
+.hero-content h1 { display: none; }
+.hero-content p {
+  font-size: 1.6rem;
+  color: #b0b0b0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease;
+  text-align: center;
+}
 
 /* Sections */
 section { padding:100px 20px; background:#111; text-align:center; position:relative; }
@@ -47,15 +67,14 @@ footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; }
 
 /* Responsive */
 @media(max-width:768px){ header h1{font-size:3rem;} header p{font-size:1.2rem;} }
-@media(max-width:480px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} header img{max-width:50%;} }
+@media(max-width:480px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} header img{max-width:60%;} }
 </style>
 </head>
 <body>
 
 <header>
   <div class="hero-content">
-    <img src="E-3.png" alt="Ellis Row Logo">
-    <h1>Ellis Row</h1>
+    <img src="E-4.png" alt="Ellis Row Logo" class="hero-logo">
     <p>Strategic Property Investments for a New Era of Luxury</p>
   </div>
 </header>
@@ -104,10 +123,8 @@ window.addEventListener('scroll', ()=>{
   header.style.backgroundPositionY = offset * 0.3 + "px";
 });
 
-// Animate hero text
+// Animate hero paragraph
 window.addEventListener('load', ()=>{
-  document.querySelector('.hero-content h1').style.opacity = 1;
-  document.querySelector('.hero-content h1').style.transform = "translateY(0)";
   document.querySelector('.hero-content p').style.opacity = 1;
   document.querySelector('.hero-content p').style.transform = "translateY(0)";
 });
