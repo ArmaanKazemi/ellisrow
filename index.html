@@ -17,8 +17,7 @@ header {
   position:relative;
   height:100vh;
   display:flex; justify-content:center; align-items:center; text-align:center;
-  background: url('modern-office-space-with-futuristic-decor-furniture.jpg') center/cover no-repeat fixed;
-  overflow:hidden;
+  background: url('IMG_9073.JPG') center/cover no-repeat fixed;
 }
 header::after {
   content:'';
@@ -33,51 +32,37 @@ header::after {
   display:flex; flex-direction:column; align-items:center;
 }
 .hero-logo {
-  width: 500px;
+  width: 550px; /* extra big logo */
   max-width:90%;
   height:auto;
   margin-bottom:40px;
-  opacity:0;
-  transform:scale(0.8);
-  animation: logoPop 1s ease forwards 0.3s; /* logo pops and stays visible */
 }
 .hero-content h1 { display:none; }
 .hero-content p {
   font-family:'Playfair Display', serif;
   font-size:1.8rem;
-  color:#d3d3d3;
-  opacity:0;
-  transform:translateY(30px);
-  animation: fadeInUp 1s ease forwards 0.8s; /* delayed after logo */
+  color:#c0c0c0;
   text-align:center;
   letter-spacing:1px;
 }
 
 /* Sections */
-section { padding:100px 20px; background:#111; text-align:center; position:relative; overflow:hidden; }
-section h2 { font-family:'Cormorant Garamond', serif; font-size:2.8rem; margin-bottom:20px; color:#bfa25a; letter-spacing:1px; opacity:0; transform:translateY(20px); animation: fadeInUp 1s ease forwards; }
-section p { max-width:700px; margin:0 auto; font-size:1.3rem; line-height:1.8; color:#c0c0c0; font-family:'Playfair Display', serif; opacity:0; transform:translateY(20px); animation: fadeInUp 1s ease forwards 0.3s; }
-.divider { width:80px; height:2px; margin:30px auto; background: linear-gradient(to right,#bfa25a,#7f6a3e,#bfa25a); opacity:0; transform:scaleX(0); animation: scaleXIn 1s ease forwards; }
+section { padding:100px 20px; background:#111; text-align:center; position:relative; }
+section h2 { font-family:'Cormorant Garamond', serif; font-size:2.8rem; margin-bottom:20px; color:#ff0000; letter-spacing:1px; }
+section p { max-width:700px; margin:0 auto; font-size:1.3rem; line-height:1.8; color:#c0c0c0; font-family:'Playfair Display', serif; }
+.divider { width:80px; height:2px; margin:30px auto; background: linear-gradient(to right,#ff0000,#c0c0c0,#ff0000); }
 
 /* Contact */
-section.contact a { display:inline-block; margin-top:1rem; padding:0.85rem 1.7rem; border:1px solid #bfa25a; border-radius:4px; color:#bfa25a; transition:0.3s; font-family:'Cormorant Garamond', serif; font-weight:600; transform:translateY(20px); opacity:0; animation: fadeInUp 1s ease forwards 0.5s;}
-section.contact a:hover { background:#bfa25a; color:#111; transform:scale(1.05); }
+section.contact a { display:inline-block; margin-top:1rem; padding:0.85rem 1.7rem; border:1px solid #ff0000; border-radius:4px; color:#ff0000; transition:0.3s; font-family:'Cormorant Garamond', serif; font-weight:600;}
+section.contact a:hover { background:#ff0000; color:#111; }
 
-footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; font-family:'Roboto', sans-serif; }
-
-/* Scroll animations */
-.scroll-fade { opacity:0; transform:translateY(30px); transition: all 1s ease; }
-.scroll-fade.show { opacity:1; transform:translateY(0); }
-
-/* Keyframes */
-@keyframes fadeInUp { 0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
-@keyframes logoPop { 0% {opacity:0; transform:scale(0.8);} 70% {opacity:1; transform:scale(1.05);} 100% {transform:scale(1);} }
-@keyframes scaleXIn { 0% {opacity:0; transform:scaleX(0);} 100% {opacity:1; transform:scaleX(1);} }
+/* Footer */
+footer { text-align:center; padding:2rem; font-size:0.9rem; color:#c0c0c0; font-family:'Roboto', sans-serif; }
 
 /* Responsive */
-@media(max-width:1024px){ .hero-logo{width:400px;} .hero-content p{font-size:1.5rem;} }
-@media(max-width:768px){ .hero-logo{width:300px;} .hero-content p{font-size:1.3rem;} section h2{font-size:2.2rem;} section p{font-size:1.1rem;} }
-@media(max-width:480px){ .hero-logo{width:250px;} .hero-content p{font-size:1rem;} section h2{font-size:1.8rem;} section p{font-size:0.95rem;} }
+@media(max-width:1024px){ .hero-logo{width:450px;} .hero-content p{font-size:1.5rem;} }
+@media(max-width:768px){ .hero-logo{width:350px;} .hero-content p{font-size:1.3rem;} section h2{font-size:2.2rem;} section p{font-size:1.1rem;} }
+@media(max-width:480px){ .hero-logo{width:280px;} .hero-content p{font-size:1rem;} section h2{font-size:1.8rem;} section p{font-size:0.95rem;} }
 </style>
 </head>
 <body>
@@ -89,19 +74,19 @@ footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; font-fam
   </div>
 </header>
 
-<section class="scroll-fade">
+<section>
   <h2>About Us</h2>
   <div class="divider"></div>
   <p>Ellis Row is a private UK-based property investment company focused on strategic acquisition, management, and growth of high-value residential properties. Our approach emphasizes discretion, professionalism, and long-term value.</p>
 </section>
 
-<section class="scroll-fade">
+<section>
   <h2>Our Philosophy</h2>
   <div class="divider"></div>
   <p>We believe in understated luxury and enduring value. Every property is carefully selected and managed to deliver sustainable growth, reflecting the standards of top-tier global investment firms.</p>
 </section>
 
-<section class="contact scroll-fade">
+<section class="contact">
   <h2>Contact</h2>
   <div class="divider"></div>
   <p>📍 Registered Address: [Your Registered Address Here]</p>
@@ -112,27 +97,6 @@ footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; font-fam
 <footer>
   © 2025 Ellis Row — All Rights Reserved
 </footer>
-
-<script>
-// Scroll fade for sections only
-const faders = document.querySelectorAll('section.scroll-fade');
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:0.2});
-faders.forEach(fader => appearOnScroll.observe(fader));
-
-// Hero parallax smooth
-const header = document.querySelector('header');
-window.addEventListener('scroll', ()=>{
-  const offset = window.pageYOffset;
-  header.style.backgroundPositionY = offset * 0.3 + "px";
-});
-</script>
 
 </body>
 </html>
