@@ -17,7 +17,8 @@ header {
   position:relative;
   height:100vh;
   display:flex; justify-content:center; align-items:center; text-align:center;
-  background: url('IMG_9073.JPG') center/cover no-repeat fixed;
+  background: url('IMG_9073.JPG') center center / cover no-repeat;
+  background-attachment: scroll; /* fixed causes issues on mobile */
 }
 header::after {
   content:'';
@@ -37,14 +38,13 @@ header::after {
   height:auto;
   margin-bottom:40px;
 }
-.hero-content h1 { display:none; }
 .hero-content p {
   font-family:'Playfair Display', serif;
   font-size:2rem;
-  color:#ffffff; /* brighter for better readability */
+  color:#ffffff;
   text-align:center;
   letter-spacing:1px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* subtle shadow for contrast */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
 /* Sections */
@@ -55,16 +55,31 @@ section p { max-width:900px; margin:0 auto; font-size:1.3rem; line-height:1.8; c
 
 /* Contact */
 section.contact { display:flex; flex-direction:column; align-items:center; }
-.contact-info { max-width:1000px; word-wrap: break-word; }
-.contact-info p { margin:0.5rem 0; }
+.contact-info { max-width:1000px; word-wrap: normal; white-space: nowrap; overflow-x:auto; } 
+.contact-info p { margin:0.5rem 0; font-size:1.2rem; }
 
 /* Footer */
 footer { text-align:center; padding:2rem; font-size:0.9rem; color:#c0c0c0; font-family:'Roboto', sans-serif; }
 
 /* Responsive */
-@media(max-width:1024px){ .hero-logo{width:600px;} .hero-content p{font-size:1.8rem;} }
-@media(max-width:768px){ .hero-logo{width:450px;} .hero-content p{font-size:1.5rem;} section h2{font-size:2.2rem;} section p{font-size:1.1rem;} }
-@media(max-width:480px){ .hero-logo{width:320px;} .hero-content p{font-size:1.2rem;} section h2{font-size:1.8rem;} section p{font-size:0.95rem;} }
+@media(max-width:1024px){ 
+  .hero-logo{width:600px;} 
+  .hero-content p{font-size:1.8rem;} 
+}
+@media(max-width:768px){ 
+  .hero-logo{width:450px;} 
+  .hero-content p{font-size:1.5rem;} 
+  section h2{font-size:2.2rem;} 
+  section p{font-size:1.1rem;} 
+}
+@media(max-width:480px){ 
+  header { height:80vh; background-position: top center; } /* mobile hero fix */
+  .hero-logo{width:320px;} 
+  .hero-content p{font-size:1.2rem;} 
+  section h2{font-size:1.8rem;} 
+  section p{font-size:0.95rem;} 
+  .contact-info { max-width:100%; overflow-x:auto; font-size:1rem; } /* long address scrollable if needed */
+}
 </style>
 </head>
 <body>
@@ -92,8 +107,8 @@ footer { text-align:center; padding:2rem; font-size:0.9rem; color:#c0c0c0; font-
   <h2>Contact</h2>
   <div class="divider"></div>
   <div class="contact-info">
-    <p>📍 Registered Address: [128 City Road, London, United Kingdom, EC1V 2NX]</p>
-    <p>📧 Email: <a href="mailto:info@ellisrow.co.uk">info@ellisrow.co.uk</a></p>
+    <p>Registered Address: [Your Very Long Registered Address Here]</p>
+    <p>Email: <a href="mailto:info@ellisrow.co.uk">info@ellisrow.co.uk</a></p>
   </div>
 </section>
 
