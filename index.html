@@ -31,16 +31,15 @@ header::after {
   max-width:900px;
   padding: 20px;
   display:flex; flex-direction:column; align-items:center;
-  animation: fadeInUp 1.5s ease forwards;
 }
 .hero-logo {
   width: 500px;
-  max-width:90%; 
+  max-width:90%;
   height:auto;
   margin-bottom:40px;
   opacity:0;
   transform:scale(0.8);
-  animation: logoPop 1s ease forwards 0.3s;
+  animation: logoPop 1s ease forwards 0.3s; /* logo pops and stays visible */
 }
 .hero-content h1 { display:none; }
 .hero-content p {
@@ -49,7 +48,7 @@ header::after {
   color:#d3d3d3;
   opacity:0;
   transform:translateY(30px);
-  animation: fadeInUp 1s ease forwards 0.8s;
+  animation: fadeInUp 1s ease forwards 0.8s; /* delayed after logo */
   text-align:center;
   letter-spacing:1px;
 }
@@ -115,8 +114,8 @@ footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; font-fam
 </footer>
 
 <script>
-// Scroll fade
-const faders = document.querySelectorAll('.scroll-fade');
+// Scroll fade for sections only
+const faders = document.querySelectorAll('section.scroll-fade');
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
