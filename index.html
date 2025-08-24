@@ -37,6 +37,12 @@
     h1,h2,h3 { font-family:'Cormorant Garamond', serif; color:#f5f5f5; }
     a { text-decoration:none; color:inherit; transition:0.3s; }
 
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
     /* Hero */
     header {
       position:relative;
@@ -56,12 +62,16 @@
       max-width:1000px;
       padding: 20px;
       display:flex; flex-direction:column; align-items:center;
+      opacity:0;
+      animation: fadeInUp 1.5s forwards 0.3s;
     }
     .hero-logo {
       width:750px;
       max-width:90%;
       height:auto;
       margin-bottom:40px;
+      opacity:0;
+      animation: fadeInUp 1.5s forwards 0.6s;
     }
     .hero-content p {
       font-family:'Playfair Display', serif;
@@ -70,12 +80,14 @@
       text-align:center;
       letter-spacing:1px;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      opacity:0;
+      animation: fadeInUp 1.5s forwards 0.9s;
     }
 
     /* Sections */
     section { padding:100px 20px; background:#111; text-align:center; position:relative; }
-    section h2 { font-family:'Cormorant Garamond', serif; font-size:2.8rem; margin-bottom:20px; color:#D4AF37; letter-spacing:1px; }
-    section p { max-width:900px; margin:0 auto; font-size:1.3rem; line-height:1.8; color:#c0c0c0; font-family:'Playfair Display', serif; }
+    section h2 { font-family:'Cormorant Garamond', serif; font-size:2.8rem; margin-bottom:20px; color:#D4AF37; letter-spacing:1px; opacity:0; animation: fadeInUp 1s forwards; }
+    section p { max-width:900px; margin:0 auto; font-size:1.3rem; line-height:1.8; color:#c0c0c0; font-family:'Playfair Display', serif; opacity:0; animation: fadeInUp 1s forwards 0.3s; }
     .divider { width:80px; height:2px; margin:30px auto; background: linear-gradient(to right,#D4AF37,#c0c0c0,#D4AF37); }
 
     /* Contact */
@@ -98,7 +110,7 @@
       section p{font-size:1.1rem;} 
     }
     @media(max-width:480px){ 
-      header { height:80vh; background-position: top center; } 
+      header { height:100vh; background-position: center top; } 
       .hero-logo{width:320px;} 
       .hero-content p{font-size:1.2rem;} 
       section h2{font-size:1.8rem;} 
@@ -136,14 +148,9 @@
   </div>
 </section>
 
-  <footer>
-    <p>
-        Registered Office : 128 City Road, London, United Kingdom, EC1V 2NX
-    </p>
-    
-    <p>
-        &copy; 2025 Ellis Row Ltd. All rights reserved.
-    </p>
+<footer>
+  <p>Registered Office: 128 City Road, London, United Kingdom, EC1V 2NX</p>
+  <p>&copy; 2025 Ellis Row Ltd. All rights reserved.</p>
 </footer>
 
 </body>
