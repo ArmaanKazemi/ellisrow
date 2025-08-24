@@ -1,145 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellis Row Ltd</title>
+    <meta name="description" content="Ellis Row Ltd — Property management with a focus on luxury, professionalism, and trust.">
+    <meta name="keywords" content="Ellis Row, property management, real estate, rentals, UK property, Ellis Row Ltd">
+    <meta name="author" content="Ellis Row Ltd">
 
-  <!-- Primary SEO -->
-  <title>Ellis Row Ltd — Luxury Property Investment Company UK</title>
-  <meta name="description" content="Ellis Row is a UK-based private property investment company specializing in high-value residential acquisitions, strategic management, and long-term growth.">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Georgia', serif;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-  <!-- Google / Search Engine Verification -->
-  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE">
+        /* Background with fade-in */
+        .background {
+            background: url('IMG_9073.JPG') no-repeat center center/cover;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            animation: fadeInBg 2s ease-in-out;
+        }
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Ellis Row Ltd — Luxury Property Investment Company UK">
-  <meta property="og:description" content="Ellis Row is a UK-based private property investment company specializing in high-value residential acquisitions, strategic management, and long-term growth.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ellisrow.co.uk/">
-  <meta property="og:image" content="https://ellisrow.co.uk/IMG_9073.JPG">
+        @keyframes fadeInBg {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ellis Row Ltd — Luxury Property Investment Company UK">
-  <meta name="twitter:description" content="Ellis Row is a UK-based private property investment company specializing in high-value residential acquisitions, strategic management, and long-term growth.">
-  <meta name="twitter:image" content="https://ellisrow.co.uk/IMG_9073.JPG">
+        .overlay {
+            background: rgba(0, 0, 0, 0.55);
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="E-4.svg">
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            animation: fadeUp 1.5s ease-out forwards;
+            opacity: 0;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        @keyframes fadeUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
 
-  <style>
-    /* Reset & fonts */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Roboto', sans-serif; color:#f5f5f5; background:#0a0a0a; line-height:1.6; overflow-x:hidden; }
-    h1,h2,h3 { font-family:'Cormorant Garamond', serif; color:#f5f5f5; }
-    a { text-decoration:none; color:inherit; transition:0.3s; }
+        .logo {
+            max-width: 300px;
+            margin-bottom: 20px;
+            animation: fadeDown 1.5s ease-out forwards;
+            opacity: 0;
+        }
 
-    /* Hero */
-    header {
-      position:relative;
-      height:100vh;
-      display:flex; justify-content:center; align-items:center; text-align:center;
-      background: url('IMG_9073.JPG') center center / cover no-repeat;
-      background-attachment: scroll;
-    }
-    header::after {
-      content:'';
-      position:absolute; top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.35);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width:1000px;
-      padding: 20px;
-      display:flex; flex-direction:column; align-items:center;
-    }
-    .hero-logo {
-      width:750px;
-      max-width:90%;
-      height:auto;
-      margin-bottom:40px;
-    }
-    .hero-content p {
-      font-family:'Playfair Display', serif;
-      font-size:2rem;
-      color:#ffffff;
-      text-align:center;
-      letter-spacing:1px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
+        @keyframes fadeDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
 
-    /* Sections */
-    section { padding:100px 20px; background:#111; text-align:center; position:relative; }
-    section h2 { font-family:'Cormorant Garamond', serif; font-size:2.8rem; margin-bottom:20px; color:#D4AF37; letter-spacing:1px; }
-    section p { max-width:900px; margin:0 auto; font-size:1.3rem; line-height:1.8; color:#c0c0c0; font-family:'Playfair Display', serif; }
-    .divider { width:80px; height:2px; margin:30px auto; background: linear-gradient(to right,#D4AF37,#c0c0c0,#D4AF37); }
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #FFD700; /* gold */
+        }
 
-    /* Contact */
-    section.contact { display:flex; flex-direction:column; align-items:center; }
-    .contact-info { max-width:1000px; word-wrap: normal; white-space: nowrap; overflow-x:auto; } 
-    .contact-info p { margin:0.5rem 0; font-size:1.2rem; }
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #e0e0e0;
+        }
 
-    /* Footer */
-    footer { text-align:center; padding:2rem; font-size:0.9rem; color:#c0c0c0; font-family:'Roboto', sans-serif; }
+        footer {
+            background: #111;
+            padding: 15px 10px;
+            font-size: 0.8rem;
+            color: #bbb;
+        }
 
-    /* Responsive */
-    @media(max-width:1024px){ 
-      .hero-logo{width:600px;} 
-      .hero-content p{font-size:1.8rem;} 
-    }
-    @media(max-width:768px){ 
-      .hero-logo{width:450px;} 
-      .hero-content p{font-size:1.5rem;} 
-      section h2{font-size:2.2rem;} 
-      section p{font-size:1.1rem;} 
-    }
-    @media(max-width:480px){ 
-      header { height:80vh; background-position: top center; } 
-      .hero-logo{width:320px;} 
-      .hero-content p{font-size:1.2rem;} 
-      section h2{font-size:1.8rem;} 
-      section p{font-size:0.95rem;} 
-      .contact-info { max-width:100%; overflow-x:auto; font-size:1rem; }
-    }
-  </style>
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .footer-content {
+            max-width: 95%;
+            margin: 0 auto;
+            line-height: 1.4;
+            white-space: nowrap;
+            overflow-x: auto; /* only scrolls if absolutely needed */
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 220px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            footer {
+                font-size: 0.7rem; /* smaller footer text for mobile */
+            }
+            .footer-content {
+                white-space: normal; /* allow wrapping on very small screens */
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="content">
+            <img src="E-4.svg" alt="Ellis Row Logo" class="logo">
+            <h1>Ellis Row Ltd</h1>
+            <p>Luxury Property Management with Integrity & Trust</p>
+            <p>Email: <a href="mailto:info@ellisrow.co.uk">info@ellisrow.co.uk</a></p>
+        </div>
+    </div>
 
-<header>
-  <div class="hero-content">
-    <img src="E-4.svg" alt="Ellis Row Logo" class="hero-logo">
-    <p>Strategic Property Investments for a New Era of Luxury</p>
-  </div>
-</header>
-
-<section>
-  <h2>About Us</h2>
-  <div class="divider"></div>
-  <p>Ellis Row is a private UK-based property investment company focused on strategic acquisition, management, and growth of high-value residential properties. Our approach emphasizes discretion, professionalism, and long-term value.</p>
-</section>
-
-<section>
-  <h2>Our Philosophy</h2>
-  <div class="divider"></div>
-  <p>We believe in understated luxury and enduring value. Every property is carefully selected and managed to deliver sustainable growth, reflecting the standards of top-tier global investment firms.</p>
-</section>
-
-<section class="contact">
-  <h2>Contact</h2>
-  <div class="divider"></div>
-  <div class="contact-info">
-    <p>Registered Address: 128 City Road, London, United Kingdom, EC1V 2NX </p>
-    <p>Email: <a href="mailto:info@ellisrow.co.uk">info@ellisrow.co.uk</a></p>
-  </div>
-</section>
-
-<footer>
-  © 2025 Ellis Row Ltd — All Rights Reserved
-</footer>
-
+    <footer>
+        <div class="footer-content">
+            © 2025 Ellis Row Ltd. All rights reserved. | Registered Office: 123 Long Street Name, City, County, Postcode, United Kingdom
+        </div>
+    </footer>
 </body>
 </html>
